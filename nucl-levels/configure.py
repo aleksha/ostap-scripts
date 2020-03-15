@@ -9,6 +9,7 @@ class DrawConfig :
         self.left    =  0.1
         self.right   =  0.7
         self.r_step  =  0.05
+        self.e_corr  =  0.01
         self.ry_corr = -0.005
         self.prefix = "Levels"
         self.format = "png"
