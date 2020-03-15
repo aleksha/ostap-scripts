@@ -2,8 +2,14 @@ class DrawConfig :
     """ Config class for drawing options.
     """
     def __init__(self):
-        self.x_size = 200 
-        self.y_size = 800
+        self.x_size  =  200 
+        self.y_size  =  800
+        self.low     =  0.1
+        self.high    =  0.9
+        self.left    =  0.1
+        self.right   =  0.7
+        self.r_step  =  0.05
+        self.ry_corr = -0.005
         self.prefix = "Levels"
         self.format = "png"
         self.list_of_formats = ["png","pdf","eps","ps","gif","root","C","jpg"]
