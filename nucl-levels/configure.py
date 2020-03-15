@@ -2,15 +2,18 @@ class DrawConfig :
     """ Config class for drawing options.
     """
     def __init__(self):
-        self.x_size  =  200 
-        self.y_size  =  800
-        self.low     =  0.1
-        self.high    =  0.9
-        self.left    =  0.1
-        self.right   =  0.7
-        self.r_step  =  0.05
-        self.e_corr  =  0.01
-        self.ry_corr = -0.005
+        self.x_size    =  200 
+        self.y_size    =  800
+        self.low       =  0.1
+        self.high      =  0.9
+        self.left      =  0.1
+        self.right     =  0.7
+        self.r_step    =  0.05
+        self.e_corr    =  0.01
+        self.ry_corr   = -0.005
+        self.nucl_x    =  0.35
+        self.nucl_y    =  0.04        
+        self.sp_x_corr = -0.23
         self.prefix = "Levels"
         self.format = "png"
         self.list_of_formats = ["png","pdf","eps","ps","gif","root","C","jpg"]
@@ -42,7 +45,7 @@ class NuclConfig :
     """
     def __init__( self,  levels = dummy_levels ):
         self.name = "B-10"
-        self.nucl = "^(10)_{5}B"
+        self.nucl = "^{10}B"
         self.levels = dummy_levels
 
 
