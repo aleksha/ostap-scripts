@@ -1,3 +1,4 @@
+ls
 # ostap-scripts
 
 Repository, which contain scripts for Ostap software system:
@@ -22,3 +23,9 @@ nucl-levels
 ------------
 
 Draw nuclear levels.
+
+gauss-2d
+------------
+
+A very simple toy-mc to show an occupancy in 2D-plane.
+
