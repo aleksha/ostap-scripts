@@ -1,7 +1,8 @@
 #===============================================================================
-sx = 5.
-sy = 7.
+sx = 6.
+sy = 6.
 N  = 1000000
+qtl = ( 0.4, 0.55, 0.049 )
 #===============================================================================
 from math import sqrt
 #
@@ -41,9 +42,9 @@ import numpy as np
 sample = np.array( smpl )
 #===============================================================================
 #print("Median         : " + str( np.median  ( sample        ) ) )
-r0 = np.quantile( sample, 0.5   )
-r1 = np.quantile( sample, 0.9   )
-r2 = np.quantile( sample, 0.999 )
+r0 = np.quantile( sample, qtl[0]                   )
+r1 = np.quantile( sample, qtl[0] + qtl[1]          )
+r2 = np.quantile( sample, qtl[0] + qtl[1] + qtl[2] )
 print("50% quantile   : " + str( r0 ) )
 print("90% quantile   : " + str( r1 ) )
 print("99.9% quantile : " + str( r2 ) )
@@ -68,12 +69,19 @@ t2 = ROOT.TLatex( 3.5*msxy, 3.*msxy, "r_{2} = " + "{0:4.1f}".format(r2) + " mm" 
 t0.SetTextSize(0.03)
 t1.SetTextSize(0.03)
 t2.SetTextSize(0.03)
+#
+tl0 = ROOT.TLatex( 3*msxy,-3.*msxy, "Ring 1 : " + "{0:4.2f}".format( 100.*qtl[0] ) + " %" )
+tl1 = ROOT.TLatex( 3*msxy,-4.*msxy, "Ring 2 : " + "{0:4.2f}".format( 100.*qtl[1] ) + " %" )
+tl2 = ROOT.TLatex( 3*msxy,-5.*msxy, "Ring 3 : " + "{0:4.2f}".format( 100.*qtl[2] ) + " %" )
+tl0.SetTextSize(0.03)
+tl1.SetTextSize(0.03)
+tl2.SetTextSize(0.03)
 #===============================================================================
 canv = ROOT.TCanvas("canv","canv",700,700)
 h2.Draw("col")
-c0.Draw(); t0.Draw()
-c1.Draw(); t1.Draw()
-c2.Draw(); t2.Draw()
+c0.Draw(); t0.Draw(); tl0.Draw()
+c1.Draw(); t1.Draw(); tl1.Draw()
+c2.Draw(); t2.Draw(); tl2.Draw()
 l1.Draw()
 l2.Draw()
 l3.Draw()
