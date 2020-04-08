@@ -4,12 +4,10 @@ multiplets
 Draw SU(3) multiplets.
 
 ```bash
-ostap -b --no-canvas configure.py draw.py
+ostap -b --no-canvas easy
 ```
 
 To do:
 ------
 
- * Hashes on axes
- * Perfect label positioning
  * Colors for labels and markers (??)
