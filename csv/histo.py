@@ -26,7 +26,7 @@ for line in csv_file:
 hR_5tev.GetYaxis().SetRangeUser(0,4)
 hR_5tev.GetXaxis().SetTitleSize(0.05)
 hR_5tev.GetXaxis().SetTitle("p_{T}, GeV/c")
-hR_5tev.GetYaxis().SetTitle("( d#sigma(D*)/dp_{T} ) / ( d#sigma(D^{0})/dp_{T} )")
+hR_5tev.GetYaxis().SetTitle("( d#sigma(D^{0})/dp_{T} ) / ( d#sigma(D*)/dp_{T} )")
 
 hR_5tev.Draw("e1")
 hR_7tev.Draw("same e1")
